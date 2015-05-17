@@ -11,8 +11,48 @@
 		<!-- Latest compiled and minified JavaScript -->
 
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			function totalRecord(){
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', 'http://185.26.127.140/biocache-service/occurrences/search?q=*:*&facet=off&pageSize=0');
+				xhr.addEventListener('readystatechange', function() {
+    				if (xhr.readyState === 4) {
+        				var response = JSON.parse(xhr.responseText);
+        				totalRecord = lisibilite_nombre(response.totalRecords);
+        				$('#totalRecord').text(totalRecord);
+    				}
+				}, false);
+				xhr.send(null);
+			}
+			function totalDataset(){
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', 'http://185.26.127.140/collectory/ws/dataResource/');
+				xhr.addEventListener('readystatechange', function() {
+    				if (xhr.readyState === 4) {
+        				var response = JSON.parse(xhr.responseText);
+        				totalDataset = lisibilite_nombre(response.length);
+        				$('#totalDataset').text(totalDataset);
+    				}
+				}, false);
+				xhr.send(null);
+			}
+			function lisibilite_nombre(nbr)
+			{
+				var nombre = ''+nbr;
+				var retour = '';
+				var count=0;
+				for(var i=nombre.length-1 ; i>=0 ; i--)
+				{
+					if(count!=0 && count % 3 == 0)
+						retour = nombre[i]+' '+retour ;
+					else
+						retour = nombre[i]+retour ;
+					count++;
+				}
+				return retour;
+			}
+		</script>
 	</head>
 
 	<body>
@@ -50,14 +90,14 @@
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="http://www.gbif.fr/atlas-of-living-france">
+								<a href="http://185.26.127.140">
 									consulter
 									<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="http://www.gbif.fr/atlas-of-living-france">Acc&egraves au portail fran&ccedilais du GBIF</a></li>
+									<li><a href="http://185.26.127.140">Acc&egraves au portail fran&ccedilais du GBIF</a></li>
 									<li><a href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees">Acc&egraves au portail international du GBIF</a></li>
-									<li><a href="http://10.1.1.2/collectory/admin">Acc&egraves à l'administration du portail français du GBIF</a></li>
+									<li><a href="http://185.26.127.140/collectory/admin">Acc&egraves à l'administration du portail français du GBIF</a></li>
 								</ul>	
 							</li>
 
@@ -117,7 +157,7 @@
 								<span class="divider">/</span>
 							</li>
 							<li>
-								<a href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees">Contribuer</a>
+								<a href="http://185.26.127.140/">Contribuer</a>
 								<span class="divider">/</span>
 							</li>
 							<li>
@@ -138,34 +178,39 @@
 					</div>
 				</div>
 
-				<h2 class="search">Les donn&eacutees fran&ccedilaises sur la biodiversit&eacute</h2>
+				<h2 class="search">Les donn&eacute;es fran&ccedil;aises sur la biodiversit&eacute;</h2>
 
 
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="http://10.1.1.2/generic-hub/occurrences/search?taxa=#tab_mapView" method="get" role="search">
-							<div class="input-group">
-								<h2><span class="glyphicon glyphicon-question-sign brown"></span>  Consulter les <span class="pink">17 000 000</span> occurrences</h2>
-								<input type="text" class="form-control input-lg" placeholder="Nom scientifique, nom vernaculaire, etc.">
-								<a class="btn-search-avance" href="http://localhost:8080/generic-hub/search#advanceSearch">Recherche avancée</a>
-								<span class="input-group-btn">
-									<button class="btn btn-default search-occurrence btn-lg" type="submit">
-										<span class="glyphicon glyphicon-search"></span>
-									</button>
-								</span>
-							</div><!-- /input-group -->
+						<form action="http://185.26.127.140/generic-hub/occurrences/search?#tab_mapView" method="get" role="search">
+							<h2 id="input-group-h2"><span class="glyphicon glyphicon-question-sign brown"></span>  Consulter les <span id="totalRecord" class="pink"></span> occurrences</h2>
+							<script type="text/javascript">totalRecord();</script>
+
+							<input type="text" class="form-control input-lg" placeholder="Nom scientifique, nom vernaculaire, etc." name="taxa">
+							<div class="row">
+								<div class="col-md-3"></div>
+								<div class="col-md-3">
+		  							<button id="first-search" class="btn btn-default search-occurrence btn-lg" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+
+								</div>
+								<div class="col-md-3">
+									<a class="btn btn-default search-occurrence btn-lg" href="http://185.26.127.140/generic-hub/search#advanceSearch">Recherche avancée</a>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
-				
-
+		
 
 
 				<div id="thumbnail-search" class="row">
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
 							<h2 class="thumbnail-2">Les métadonnées</h2>
-							<img src="picture/institution.png" alt="Institution, Collection et Projets">
+							<a href="http://185.26.127.140/collectory/">
+								<img src="picture/institution.png" alt="Institution, Collection et Projets">
+							</a>
 							<div class="caption">
 								<p>Information sur les institutions et collection françaises sur la biodiversité. Vous retrouvez la description, les contacts et autres informations pratiques sur les acteurs français principaux  en biodiversité</p>
 								<!--		<p><a href="http://10.1.1.2/collectory/" target="_blank" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux métadonnées</a></p> -->
@@ -174,8 +219,9 @@
 					</div>
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-							<h2 class="thumbnail-2">Jeux de données</h2>
-							<img src="picture/jeu-donnees2.png" alt="Jeux de données">
+							<h2 class="thumbnail-2"><span id="totalDataset"></span> Jeux de données</h2>
+							<script type="text/javascript">totalDataset();</script>
+							<a href="http://185.26.127.140/collectory/datasets"><img src="picture/jeu-donnees2.png" alt="Jeux de données"></a>
 							<div class="caption">
 								<p>Information sur les jeux de données des institutions ou collections participants au GBIF (licence, citation, etc.)</p>
 								<!--	<p><a href="http://10.1.1.2/collectory/datasets" target="_blank" id="btn-search-dataset" class="btn btn-primary" role="button">Accéder aux jeux de données</a></p> -->
@@ -185,7 +231,7 @@
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
 							<h2 class="thumbnail-2">Explorer par aires</h2>
-							<img src="picture/explore-aire.png" alt="Explorer par aire">
+							<a href="http://185.26.127.140/generic-hub/explore/your-area?default=true"><img src="picture/jeu-donnees3.jpg" alt="Explorer par aire"></a>
 							<div class="caption">
 								<p>Exploration des occurrences situées dans une zone de 5 ou 10 km autour d'un point donné. </p>
 								
@@ -197,18 +243,16 @@
 
 				<div id="access" class="row">
 					<div class="col-sm-6 col-md-4">
-						<p><a href="http://10.1.1.2/collectory/" target="_blank" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux métadonnées</a></p>
+						<p><a href="http://185.26.127.140/collectory/" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux métadonnées</a></p>
 
 					</div>
 					<div class="col-sm-6 col-md-4">
-
-						
-						<p><a href="http://10.1.1.2/collectory/datasets" target="_blank" id="btn-search-dataset" class="btn btn-primary" role="button">Accéder aux jeux de données</a></p>
+						<p><a href="http://185.26.127.140/collectory/datasets" id="btn-search-dataset" class="btn btn-primary" role="button">Accéder aux jeux de données</a></p>
 						
 					</div>
 					<div class="col-sm-6 col-md-4">
 						
-						<p><a href="http://10.1.1.2/generic-hub/explore/your-area?default=true" target="_blank" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer votre zone</a></p>
+						<p><a href="http://185.26.127.140/generic-hub/explore/your-area?default=true" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer votre zone</a></p>
 
 					</div>
 				</div>
@@ -273,10 +317,5 @@
 				<p>GBIF FRANCE ● MNHN G&eacuteologie ● 43 rue Buffon CP 48 &#150; 75005 Paris  &#150; France  &#150; <span style="line-height:1.6">T&eacutel. : +33 (0)1 40 79 80 65</span></p>
 			</address> 
 		</footer> 
-		<div class="back-to-top">
-			<a href="#top">
-				<img class="toplink" alt="Revenir en haut"  src="picture/fleche_top.png" style="display: block;">
-			</a>
-		</div>
 	</body>
 	</html>

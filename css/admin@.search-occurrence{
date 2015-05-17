@@ -246,7 +246,7 @@ ul.nav ul > li {
 }
 
 
-#input-group-h2{
+.input-group h2{
     color:  #a6ac1a;
     font-family: "Roboto",​Helvetica,​Arial,​sans-serif;
     font-size: 22px;
@@ -258,20 +258,15 @@ ul.nav ul > li {
     border: 1px solid rgba(136, 126, 124, 1);
     border-radius: 4px;
     font-size: 14px;
-    font-weight: 700px;
-    line-height: 17.15px;
     height: 46px;
-    font-weight: normal;
+    line-height: 1.42857;
     background-color: rgba(136, 126, 124, 1);
     background-image: none;
     border: 1px solid rgba(136, 126, 124, 1);
-    margin-top: 20px;
-    color: white;
+    margin-top: 78px;
+    width: 300%;
 }
 
-#first-search{
-    width: 100%;
-}
 .col-lg-8{
     margin-right: auto;
     margin-left: auto;
