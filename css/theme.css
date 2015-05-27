@@ -23,6 +23,10 @@ header img {
     top: 10px;
 }
 
+a:focus, a:hover{
+    outline: none;
+}
+
 .container{
 	padding:0;
 	background: white;
@@ -257,9 +261,8 @@ ul.nav ul > li {
 .search-occurrence, .search-occurrence:hover, .search-occurrence:focus{
     border: 1px solid rgba(136, 126, 124, 1);
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700px;
-    line-height: 17.15px;
     height: 46px;
     font-weight: normal;
     background-color: rgba(136, 126, 124, 1);
@@ -267,6 +270,12 @@ ul.nav ul > li {
     border: 1px solid rgba(136, 126, 124, 1);
     margin-top: 20px;
     color: white;
+}
+
+#total-record-link:hover, #total-record-link:focus{
+    font-size: 35px;
+    color:#cb3b59; 
+    text-decoration: none;
 }
 
 #first-search{
@@ -334,6 +343,10 @@ ul.nav ul > li {
 
 #access{
     margin-bottom: 50px;
+}
+
+.caption{
+    text-align: justify;
 }
 /* FOOTER */
 

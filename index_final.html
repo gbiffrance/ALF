@@ -180,11 +180,16 @@
 
 				<h2 class="search">Les donn&eacute;es fran&ccedil;aises sur la biodiversit&eacute;</h2>
 
+				<p>
 
+				Le portail français du GBIF ouvre l’accès aux données primaires sur la
+biodiversité fournies par des institutions françaises. Ces données d’occurrences
+d’espèces sont issues de collections ou d’observations de terrain et ont une distribution géographique mondiale.
+				</p>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
 						<form action="http://185.26.127.140/generic-hub/occurrences/search?#tab_mapView" method="get" role="search">
-							<h2 id="input-group-h2"><span class="glyphicon glyphicon-question-sign brown"></span>  Consulter les <span id="totalRecord" class="pink"></span> occurrences</h2>
+							<h2 id="input-group-h2"><span class="glyphicon glyphicon-question-sign brown"></span>  Consulter les <a href="http://185.26.127.140/generic-hub/occurrences/search?#tab_mapView" method="get" id="total-record-link"><span id="totalRecord" class="pink"></a></span> occurrences</h2>
 							<script type="text/javascript">totalRecord();</script>
 
 							<input type="text" class="form-control input-lg" placeholder="Nom scientifique, nom vernaculaire, etc." name="taxa">
@@ -207,12 +212,12 @@
 				<div id="thumbnail-search" class="row">
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-							<h2 class="thumbnail-2">Les métadonnées</h2>
+							<h2 class="thumbnail-2">Les collections</h2>
 							<a href="http://185.26.127.140/collectory/">
 								<img src="picture/institution.png" alt="Institution, Collection et Projets">
 							</a>
 							<div class="caption">
-								<p>Information sur les institutions et collection françaises sur la biodiversité. Vous retrouvez la description, les contacts et autres informations pratiques sur les acteurs français principaux  en biodiversité</p>
+								<p>Informations sur les collections françaises sur la biodiversité. Vous retrouvez la description, les contacts et autres informations pratiques sur les acteurs français principaux de la biodiversité.</p>
 								<!--		<p><a href="http://10.1.1.2/collectory/" target="_blank" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux métadonnées</a></p> -->
 							</div>
 						</div>
@@ -223,17 +228,17 @@
 							<script type="text/javascript">totalDataset();</script>
 							<a href="http://185.26.127.140/collectory/datasets"><img src="picture/jeu-donnees2.png" alt="Jeux de données"></a>
 							<div class="caption">
-								<p>Information sur les jeux de données des institutions ou collections participants au GBIF (licence, citation, etc.)</p>
+								<p>Accès aux données d'occurrences et informations sur les jeux de données publiés par les institutions ou collections participant au GBIF (licence, citation, etc.)</p>
 								<!--	<p><a href="http://10.1.1.2/collectory/datasets" target="_blank" id="btn-search-dataset" class="btn btn-primary" role="button">Accéder aux jeux de données</a></p> -->
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-							<h2 class="thumbnail-2">Explorer par aires</h2>
-							<a href="http://185.26.127.140/generic-hub/explore/your-area?default=true"><img src="picture/jeu-donnees3.jpg" alt="Explorer par aire"></a>
+							<h2 class="thumbnail-2">Portail spatial</h2>
+							<a href="#"><img src="picture/jeu-donnees3.jpg" alt="Explorer par aire"></a>
 							<div class="caption">
-								<p>Exploration des occurrences situées dans une zone de 5 ou 10 km autour d'un point donné. </p>
+								<p>Exploration des occurrences géo-référencées (en cours de construction). </p>
 								
 								<!--	<p><a href="http://10.1.1.2/collectory/datasets" target="_blank" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer votre zone</a></p> -->
 							</div>
@@ -243,7 +248,7 @@
 
 				<div id="access" class="row">
 					<div class="col-sm-6 col-md-4">
-						<p><a href="http://185.26.127.140/collectory/" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux métadonnées</a></p>
+						<p><a href="http://185.26.127.140/collectory/" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux collections</a></p>
 
 					</div>
 					<div class="col-sm-6 col-md-4">
@@ -252,7 +257,7 @@
 					</div>
 					<div class="col-sm-6 col-md-4">
 						
-						<p><a href="http://185.26.127.140/generic-hub/explore/your-area?default=true" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer votre zone</a></p>
+						<p><a href="http://185.26.127.140/generic-hub/explore/your-area?default=true" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer les occurrences</a></p>
 
 					</div>
 				</div>
