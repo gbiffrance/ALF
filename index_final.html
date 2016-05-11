@@ -56,13 +56,13 @@
 	</head>
 
 	<body>
-		<header class="row-fluid">
+		<div id="header" class="row-fluid">
 			<a href="http://www.gbif.fr"><img src="picture/header_gbif_site.png" alt="Le GBIF France"></a>
-		</header>
-		<div class="navbar navbar-static">
-			<div class="navbar-inner">
-				<div class="container">
-					<div id="block-menu-block-2" class="block block-menu-block clearfix">
+		</div>
+		<div class="navbar-header format">	
+			<div class="contenu_page">
+				<div class="row">
+					<div class="menu_navigation col-xs-12 col-sm-8">
 						<ul class="menu nav">
 							<li class="dropdown">
 								<a id="sinformer" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/infos/quest-ce-que-le-gbif" role="button">
@@ -78,7 +78,7 @@
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="http://www.gbif.fr/page/contrib/connecter-des-donnees-au-gbif">
+								<a id="contribuer" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/contrib/connecter-des-donnees-au-gbif" role="button">
 									contribuer
 									<span class="caret"></span>
 								</a>
@@ -91,6 +91,7 @@
 							</li>
 							<li class="dropdown">
 								<a href="http://185.26.127.140">
+								<a id="consulter" class="dropdown-toggle" data-target="#" href="185.26.127.140" role="button">
 									consulter
 									<span class="caret"></span>
 								</a>
@@ -102,7 +103,7 @@
 							</li>
 
 							<li class="dropdown">
-								<a href="http://www.gbif.fr/page/utiliser/exemples-dutilisation-des-donnees">
+								<a id="utiliser" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/utiliser/exemples-dutilisation-des-donnees" role="button">
 									utiliser
 									<span class="caret"></span>
 								</a>
@@ -112,7 +113,7 @@
 							</li>
 
 							<li class="dropdown">
-								<a href="http://www.gbif.fr/page/ressources/documentation">
+								<a id="ressources" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/ressources/documentation" role="button">
 									ressources
 									<span class="caret"></span>
 								</a>
@@ -129,7 +130,7 @@
 							</li>
 
 							<li class="dropdown">
-								<a href="http://www.gbif.fr/page/partenaires">
+								<a id="partenaires" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/partenaires" role="button">
 									partenaires
 									<span class="caret"></span>
 								</a>
@@ -248,16 +249,16 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 
 				<div id="access" class="row">
 					<div class="col-sm-6 col-md-4">
-						<p><a href="http://185.26.127.140/collectory/" id="btn-search-meta" class="btn btn-primary" role="button">Accéder aux collections</a></p>
+						<p><a href="http://185.26.127.140/collectory/" id="btn-search-meta" class="btn btn-primary bouton" role="button">Accéder aux collections</a></p>
 
 					</div>
 					<div class="col-sm-6 col-md-4">
-						<p><a href="http://185.26.127.140/collectory/datasets" id="btn-search-dataset" class="btn btn-primary" role="button">Accéder aux jeux de données</a></p>
+						<p><a href="http://185.26.127.140/collectory/datasets" id="btn-search-dataset" class="btn btn-primary bouton" role="button">Accéder aux jeux de données</a></p>
 						
 					</div>
 					<div class="col-sm-6 col-md-4">
 						
-						<p><a href="http://185.26.127.140/generic-hub/explore/your-area?default=true" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer les occurrences</a></p>
+						<p><a href="http://185.26.127.140/generic-hub/explore/your-area?default=true" id="btn-search-explorer" class="btn btn-primary bouton" role="button">Explorer les occurrences</a></p>
 
 					</div>
 				</div>
@@ -289,38 +290,36 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 
 
 
-		<footer>
-
-			<div class="footer-margin social">
-				<ul>
-					<li>
-						<a target="_blank" href="http://twitter.com/gbiffrance" title="Rejoignez sous sur Twitter !">
-							<img width="16" height="16" src="picture/twitter.png" alt="twitter logo">
-						</a>
-					</li>
-					<li>
-						<a target="_blank" href="/news.xml" title="Suivez notre actualité (Flux RSS)">
-							<img width="16" height="16" src="picture/rss.png" alt="RSS logo">
-						</a>
-					</li>
-					<li>
-						<a target="_blank" title="Page Facebook du GBIF" href="https://www.facebook.com/gbifnews">
-							<img width="16" height="16" src="picture/facebook.png" alt="Facebook logo">
-						</a> 
-					</li>
-				</ul>
-			</div> 
-			<div class="footer-margin">
-				<ul id="footer-link">
-					<li ><a  target="_blank" title="" href="http://www.gbif.fr">Accueil</a></li>
-					<li ><a target="_blank" title="" href="http://www.gbif.fr/contact">Contact</a></li>
-					<li ><a title="" href="http://www.gbif.fr/content/mentions-legales">Mentions l&eacutegales</a></li>
-					<li ><a href="http://www.gbif.fr/sitemap">Plan du site</a> </li>
-				</ul>
-			</div> 
-			<address class="footer-margin"> 
-				<p>GBIF FRANCE ● MNHN G&eacuteologie ● 43 rue Buffon CP 48 &#150; 75005 Paris  &#150; France  &#150; <span style="line-height:1.6">T&eacutel. : +33 (0)1 40 79 80 65</span></p>
-			</address> 
-		</footer> 
+		<div id="footer">
+			<div class="region-footer">
+				<div class="contenu_page">
+					<div class="social_icons">
+						<ul>
+							<li>
+								<a target="_blank" href="http://twitter.com/gbiffrance" title="Rejoignez sous sur Twitter !">
+									<img width="28" height="28" src="picture/Logo-Twitter-white.png" alt="twitter logo">
+								</a>
+							</li>
+							<li>
+								<a target="_blank" title="Page Facebook du GBIF" href="https://www.facebook.com/gbifnews">
+									<img width="28" height="28" src="picture/Logo-Facebook.png" alt="Facebook logo">
+								</a> 
+							</li>
+						</ul>
+					</div> 
+					<div id="block-menu-menu-links-footer">
+						<ul class="menu nav">
+							<li ><a  target="_blank" title="" href="http://www.gbif.fr">Accueil</a></li>
+							<li ><a target="_blank" title="" href="http://www.gbif.fr/contact">Contact</a></li>
+							<li ><a title="" href="http://www.gbif.fr/content/mentions-legales">Mentions l&eacutegales</a></li>
+							<li ><a href="http://www.gbif.fr/sitemap">Plan du site</a> </li>
+						</ul>
+					</div> 
+					<address class="footer-margin"> 
+						<p>GBIF FRANCE ● MNHN G&eacuteologie ● 43 rue Buffon CP 48 &#150; 75005 Paris  &#150; France  &#150; <span style="line-height:1.6">T&eacutel. : +33 (0)1 40 79 80 65</span></p>
+					</address> 
+				</div>
+			</div>
+		</div> 
 	</body>
 	</html>
