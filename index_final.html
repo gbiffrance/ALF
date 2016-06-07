@@ -14,20 +14,22 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			function totalRecord(){
-				var xhr = new XMLHttpRequest();
-				xhr.open('GET', 'http://185.26.127.140/biocache-service/occurrences/search?q=*:*&facet=off&pageSize=0');
-				xhr.addEventListener('readystatechange', function() {
-    				if (xhr.readyState === 4) {
-        				var response = JSON.parse(xhr.responseText);
-        				totalRecord = lisibilite_nombre(response.totalRecords);
-        				$('#totalRecord').text(totalRecord);
+				var xhrs = new XMLHttpRequest();
+				xhrs.open('GET', 'http://recherche-ws.gbif.fr/occurrences/search?q=*:*&facet=off&pageSize=0');
+				xhrs.addEventListener('readystatechange', function() {
+    				if (xhrs.readyState === 4) {
+    					console.log(xhrs.responseText);
+        				var response = JSON.parse(xhrs.responseText);
+        				// totalRecord = lisibilite_nombre(response.totalRecords);
+        				// $('#totalRecord').text(totalRecord);
+        				// console.log(totalRecord);
     				}
 				}, false);
-				xhr.send(null);
+				xhrs.send(null);
 			}
 			function totalDataset(){
 				var xhr = new XMLHttpRequest();
-				xhr.open('GET', 'http://185.26.127.140/collectory/ws/dataResource/');
+				xhr.open('GET', 'http://metadonnee.gbif.fr/ws/dataResource');
 				xhr.addEventListener('readystatechange', function() {
     				if (xhr.readyState === 4) {
         				var response = JSON.parse(xhr.responseText);
@@ -90,15 +92,15 @@
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="http://185.26.127.140">
-								<a id="consulter" class="dropdown-toggle" data-target="#" href="185.26.127.140" role="button">
+								<a href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees">
+								<a id="consulter" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees" role="button">
 									consulter
 									<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="http://185.26.127.140">Acc&egraves au portail fran&ccedilais du GBIF</a></li>
-									<li><a href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees">Acc&egraves au portail international du GBIF</a></li>
-									<li><a href="http://185.26.127.140/collectory/admin">Acc&egraves à l'administration du portail français du GBIF</a></li>
+									<li><a href="http://portail.gbif.fr">Acc&egraves au portail fran&ccedilais du GBIF</a></li>
+									<li><a href="http://www.gbif.org" target="_blank">Acc&egraves au portail international du GBIF</a></li>
+									<li><a href="http://metadonnee.gbif.fr/admin">Acc&egraves à l'administration du portail français du GBIF</a></li>
 								</ul>	
 							</li>
 
@@ -158,11 +160,11 @@
 								<span class="divider">/</span>
 							</li>
 							<li>
-								<a href="http://185.26.127.140/">Contribuer</a>
+								<a href="http://portail.gbif.fr/">Consulter</a>
 								<span class="divider">/</span>
 							</li>
 							<li>
-								Portail Atlas of Living France
+								Portail français du GBIF
 							</li>
 						</ul>
 					</div>
@@ -189,8 +191,8 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 				</p>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
-						<form action="http://185.26.127.140/generic-hub/occurrences/search?#tab_mapView" method="get" role="search">
-							<h2 id="input-group-h2"><span class="glyphicon glyphicon-question-sign brown"></span>  Consulter les <a href="http://185.26.127.140/generic-hub/occurrences/search?#tab_mapView" method="get" id="total-record-link"><span id="totalRecord" class="pink"></a></span> occurrences</h2>
+						<form action="http://recherche.gbif.fr/occurrences/search?#tab_mapView" method="get" role="search">
+							<h2 id="input-group-h2"><span class="glyphicon glyphicon-question-sign brown"></span>  Consulter les <a href="http://recherche.gbif.fr/occurrences/search?#tab_mapView" method="get" id="total-record-link"><span id="totalRecord" class="pink"></a></span> occurrences</h2>
 							<script type="text/javascript">totalRecord();</script>
 
 							<input type="text" class="form-control input-lg" placeholder="Nom scientifique, nom vernaculaire, etc." name="taxa">
@@ -201,7 +203,7 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 
 								</div>
 								<div class="col-md-3">
-									<a class="btn btn-default search-occurrence btn-lg" href="http://185.26.127.140/generic-hub/search#advanceSearch">Recherche avancée</a>
+									<a class="btn btn-default search-occurrence btn-lg" href="http://recherche.gbif.fr/search#advanceSearch">Recherche avancée</a>
 								</div>
 							</div>
 						</form>
@@ -214,7 +216,7 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
 							<h2 class="thumbnail-2">Les collections</h2>
-							<a href="http://185.26.127.140/collectory/">
+							<a href="http://metadonnee.gbif.fr">
 								<img src="picture/institution.png" alt="Institution, Collection et Projets">
 							</a>
 							<div class="caption">
@@ -227,7 +229,7 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 						<div class="thumbnail">
 							<h2 class="thumbnail-2"><span id="totalDataset"></span> Jeux de données</h2>
 							<script type="text/javascript">totalDataset();</script>
-							<a href="http://185.26.127.140/collectory/datasets"><img src="picture/jeu-donnees2.png" alt="Jeux de données"></a>
+							<a href="http://metadonnee.gbif.fr/datasets"><img src="picture/jeu-donnees2.png" alt="Jeux de données"></a>
 							<div class="caption">
 								<p>Accès aux données d'occurrences et informations sur les jeux de données publiés par les institutions ou collections participant au GBIF (licence, citation, etc.)</p>
 								<!--	<p><a href="http://10.1.1.2/collectory/datasets" target="_blank" id="btn-search-dataset" class="btn btn-primary" role="button">Accéder aux jeux de données</a></p> -->
@@ -237,9 +239,9 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
 							<h2 class="thumbnail-2">Portail spatial</h2>
-							<a href="#"><img src="picture/jeu-donnees3.jpg" alt="Explorer par aire"></a>
+							<a href="spatial.gbif.fr"><img src="picture/jeu-donnees3.jpg" alt="Portail spatial"></a>
 							<div class="caption">
-								<p>Exploration des occurrences géo-référencées (en cours de construction). </p>
+								<p>Portail spatial du GBIF France.</p>
 								
 								<!--	<p><a href="http://10.1.1.2/collectory/datasets" target="_blank" id="btn-search-explorer" class="btn btn-primary" role="button">Explorer votre zone</a></p> -->
 							</div>
@@ -249,16 +251,16 @@ d’espèces sont issues de collections ou d’observations de terrain et ont un
 
 				<div id="access" class="row">
 					<div class="col-sm-6 col-md-4">
-						<p><a href="http://185.26.127.140/collectory/" id="btn-search-meta" class="btn btn-primary bouton" role="button">Accéder aux collections</a></p>
+						<p><a href="http://metadonnee.gbif.fr" id="btn-search-meta" class="btn btn-primary bouton" role="button">Accéder aux collections</a></p>
 
 					</div>
 					<div class="col-sm-6 col-md-4">
-						<p><a href="http://185.26.127.140/collectory/datasets" id="btn-search-dataset" class="btn btn-primary bouton" role="button">Accéder aux jeux de données</a></p>
+						<p><a href="http://metadonnee.gbif.fr/datasets" id="btn-search-dataset" class="btn btn-primary bouton" role="button">Accéder aux jeux de données</a></p>
 						
 					</div>
 					<div class="col-sm-6 col-md-4">
 						
-						<p><a href="http://185.26.127.140/generic-hub/explore/your-area?default=true" id="btn-search-explorer" class="btn btn-primary bouton" role="button">Explorer les occurrences</a></p>
+						<p><a href="http://spatial.gbif.fr" id="btn-search-explorer" class="btn btn-primary bouton" role="button">Explorer les occurrences</a></p>
 
 					</div>
 				</div>
