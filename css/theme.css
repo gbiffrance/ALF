@@ -229,7 +229,6 @@ ul li {
 
 .breadcrumb {
     background-color: transparent;
-    float: left;
     font-size: 80%;
     margin-bottom: 10px;
     padding: 0;
@@ -359,8 +358,6 @@ ul.contextual-links li a {
 .content {
     margin: 0% 2% 0% 2%;
     padding: 1% 0% 0% 0%;
-    border-left: 1px solid #DDDDDD;
-    border-right: 1px solid #DDDDDD;
     background-color: #FFFFFF;
 }
 
