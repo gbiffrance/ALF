@@ -6,6 +6,8 @@ body{
 
 .row {
     clear: both;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .contenu_page {
@@ -214,6 +216,10 @@ ul.nav ul > li {
     visibility: hidden;
 }
 
+ul li {
+    list-style-type: none;
+}
+
 /* FIL D'ARIANE */
 
 #block-block-6{
@@ -224,7 +230,7 @@ ul.nav ul > li {
 .breadcrumb {
     background-color: transparent;
     float: left;
-    font-size: 11px;
+    font-size: 80%;
     margin-bottom: 10px;
     padding: 0;
 }
@@ -233,7 +239,7 @@ ul.nav ul > li {
     background-image: url("picture/arrow_state_grey_right.png");
     background-position: -1px center;
     background-repeat: no-repeat;
-    padding-left: 15px;
+    padding-left: 5%;
 }
 
 .breadcrumb li:last-child{
@@ -241,10 +247,18 @@ ul.nav ul > li {
     font-weight: 700;
 }
 
+.breadcrumb>li {
+    display: inline;
+    margin-left: 0.5%;
+}
+
 .currentdate {
-    font-size: 11px;
-    font-weight: 700;
+    float: right;
+    font-size: 80%;
+    padding-right: 2.5%;
     text-align: right;
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
 .breadcrumb a {
@@ -342,8 +356,12 @@ ul.contextual-links li a {
 
 /* RECHERCHE */
 
-.content{
-	padding: 10px 20px 10px 20px;
+.content {
+    margin: 0% 2% 0% 2%;
+    padding: 1% 0% 0% 0%;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
 }
 
 .search{
@@ -570,6 +588,11 @@ ul.contextual-links li a {
     color: white;
 }
 
+.region-footer ul.social_icons li {
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+}
+
 .region-footer .nav li a {
     padding-left: 0.5%;
 }
@@ -578,7 +601,7 @@ ul.contextual-links li a {
     background-color: transparent;
 }
 
-.region-footer #block-block-1, .region-footer #block-block-2 {
+.region-footer, .region-footer {
     display: none;
 }
 
@@ -631,10 +654,14 @@ ul.contextual-links li a {
 	.navbar-header .nav {
 		font-size: 75%;
 	}
+	
+	.navbar-header .nav>li:hover {
+		border-bottom: 5px solid #CB3B59;
+	}
 
 	.navbar-header .nav>li {
 		display: inline-block;
-		font-size: 100%;
+		font-size: 98%;
 		margin: 2%;
 		padding-bottom: 2%;
 	}
@@ -645,8 +672,12 @@ ul.contextual-links li a {
 		/*height: 50px;*/
 	}	
 	
-	.region-footer #block-block-1, .region-footer #block-block-2 {
+	.region-footer, .region-footer {
 		display: block;
+	}
+	
+	.breadcrumb {
+		margin-left: -1.7%;
 	}
 }
 
@@ -658,6 +689,7 @@ ul.contextual-links li a {
 	.navbar-header .nav > li {
 		margin: 1.5%;
 		padding-bottom: 2%;
+		margin-top: -4px;
 	}
 	
 	.navbar-header {
@@ -667,6 +699,10 @@ ul.contextual-links li a {
 	.row {
 		margin-right: 15px;
 		margin-left: 15px;
+	}
+	
+	.col-sm-12 {
+		width: 98%;
 	}
 }
 
