@@ -94,7 +94,6 @@
 								</ul>
 							</li>
 							<li class="dropdown">
-								<a href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees">
 								<a id="consulter" class="dropdown-toggle" data-target="#" href="http://www.gbif.fr/page/consult/acces-aux-donnees-et-metadonnees" role="button">
 									consulter
 									<span class="caret"></span>
@@ -155,6 +154,18 @@
 		<div class="container">
 			<div class="content format">
 				<div class="row">
+					<div class="currentdate">
+						<div id="block-block-6" class="block block-block clearfix">
+							<script language="javascript">
+							today = new Date();
+							var options = {
+								weekday: "long", year: "numeric", month: "long", day: "2-digit"
+							};
+							document.write(today.toLocaleDateString("fr-fr", options));
+							</script>
+						</div>
+					</div>
+					
 					<div class="block-breadcrumb col-sm-6 col-md-6">
 						<ul class="breadcrumb">
 							<li>
@@ -170,17 +181,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="currentdate">
-						<div id="block-block-6" class="block block-block clearfix">
-							<script language="javascript">
-							today = new Date();
-							var options = {
-								weekday: "long", year: "numeric", month: "long", day: "2-digit"
-							};
-							document.write(today.toLocaleDateString("fr-fr", options));
-							</script>
-						</div>
-					</div>
+					
 				</div>
 
 				<div class="row col-xs-12 col-sm-12">

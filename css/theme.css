@@ -48,6 +48,9 @@ a:focus, a:hover{
 .container{
 	padding:0;
 	background: white;
+	margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
 }
 
 /* MENU */
@@ -163,7 +166,6 @@ ul.nav ul > li {
 .navbar-header .nav > li > a {
     color: white;
     text-shadow: none;
-    padding: 10% 0% 0% 0%;
     display: inline-block;
     position: static;
     width: 110%;
@@ -253,8 +255,8 @@ ul li {
 
 .currentdate {
     float: right;
-    font-size: 80%;
-    padding-right: 2.5%;
+    font-size: 82%;
+    margin-right: -0.8%;
     text-align: right;
     font-weight: 700;
     margin-bottom: 0;
@@ -645,7 +647,7 @@ ul.contextual-links li a {
 	}
 	
 	.navbar-header {
-		float: left;
+		float: none;
 	}
 	
 	.navbar-header .nav {
@@ -662,11 +664,15 @@ ul.contextual-links li a {
 		margin: 2%;
 		padding-bottom: 2%;
 	}
+	
+	.navbar-header .nav > li > a {
+		padding: 10% 0% 0% 0%;
+		margin-top : 15%;
+	}
 
 	.menu_navigation {
-		width: 70%;
+		width: 100%;
 		padding-right: 0;
-		/*height: 50px;*/
 	}	
 	
 	.region-footer, .region-footer {
@@ -712,6 +718,10 @@ ul.contextual-links li a {
 		height: 160px;
 	}
 	
+	.menu_navigation {
+		width: 70%;
+	}	
+	
 	.navbar-header {
 		padding: 0%;
 	}
@@ -730,5 +740,11 @@ ul.contextual-links li a {
 		margin-left: auto;
 		margin-right: auto;
 		width: 1170px;
+	}
+	
+	.container{
+		width: 1170px;
+		margin-left:auto;
+		margin-right:auto;
 	}
 }
