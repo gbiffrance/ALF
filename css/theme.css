@@ -168,7 +168,7 @@ ul.nav ul > li {
     text-shadow: none;
     display: inline-block;
     position: static;
-    width: 110%;
+    width: 100%;	/*	MAJ	110%;	*/
     font-weight: 700;
 }
 
@@ -265,11 +265,11 @@ ul li {
     padding: 0;
 }
 
-.breadcrumb:first-child {
-    background-image: url("picture/arrow_state_grey_right.png");
+.breadcrumb:first-child {	/*	A GENERALISER	*/
+    background-image: url("picture/arrow_state_grey_right.png");	
     background-position: -1px center;
     background-repeat: no-repeat;
-    padding-left: 5%;
+    padding-left: 3.5%;
 }
 
 .breadcrumb li:last-child{
@@ -280,6 +280,7 @@ ul li {
 .breadcrumb>li {
     display: inline;
     margin-left: 0.5%;
+	text-rendering: geometricPrecision;
 }
 
 .currentdate {
@@ -289,6 +290,7 @@ ul li {
     text-align: right;
     font-weight: 700;
     margin-bottom: 0;
+	text-rendering: optimizeSpeed;
 }
 
 .breadcrumb a {
@@ -686,19 +688,20 @@ ul.contextual-links li a {
 
 	.navbar-header .nav>li {
 		display: inline-block;
-		font-size: 98%;
+		font-size: 102%;	/*	MAJ	92%;	*/
 		margin: 2%;
 		padding-bottom: 2%;
 	}
 	
 	.navbar-header .nav > li > a {
 		padding: 10% 0% 0% 0%;
-		margin-top : 15%;
+		margin-top : 16%;	/*	MAJ	15%;	*/
 	}
 
 	.menu_navigation {
 		width: 100%;
 		padding-right: 0;
+		height:70px;	/*	MAJ	*/
 	}	
 	
 	.region-footer, .region-footer {
@@ -706,7 +709,8 @@ ul.contextual-links li a {
 	}
 	
 	.breadcrumb {
-		margin-left: -1.7%;
+		margin-left: -3%;	/*	MAJ	-1.7%;	*/
+		line-height:25px;	/*	MAJ Ajout	*/
 	}
 }
 
@@ -716,18 +720,13 @@ ul.contextual-links li a {
 	}
 
 	.navbar-header .nav > li {
-		margin: 1.5%;
+		margin: 1.5%;		/*	MAJ 1.5%	*/
 		padding-bottom: 2%;
 		margin-top: -4px;
 	}
 	
 	.navbar-header {
 		float: none;
-	}
-	
-	.row {
-		margin-right: 15px;
-		margin-left: 15px;
 	}
 	
 	.col-sm-12 {
